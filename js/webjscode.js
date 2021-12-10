@@ -70,7 +70,7 @@ function Coviddata() {
         deathchart = deathchart.reverse();
 
         //----------------백신 접종률 높은순으로 5개 구하는 부분 ------------------//
-        var countryWithVaccine = [] // 백신 접종률이 높은 순으로 정렬하려고 하는 배열임
+        var countryWithVaccine = [] // 백신 접종률이 높은 순으로 정렬하려고 하는 배열
         var today = new Date(+new Date() + 3240 * 10000);
         today.setDate(today.getDate()-1);
         today = today.toISOString().split("T")[0]; // 어제 날짜를 찾아서 출력
