@@ -1,0 +1,156 @@
+div.bar{
+  border: #000 solid 3px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  display: flex;
+  align-items: center;
+  margin-top: 1px;
+  margin-left: 20px;
+  height: 50px;
+  width: 1040px;
+  justify-content: space-between;
+}
+div.chart1{
+  border: #000 solid 3px;
+  display: inline-block;
+  border-radius: 5px;
+  margin-top: 1em;
+  margin-left: 20px;
+  height: 520px;
+  width: 1040px;
+
+
+}
+div.chart2{
+  border: rgb(0, 0, 0) solid 3px;
+  display: inline-block;
+  border-radius: 5px;
+  margin-top: 1em;
+  margin-left: 20px;
+  height: 350px;
+  width: 670px;
+}
+div.chart3{
+  border: #000 solid 3px;
+  display: inline-block;
+  border-radius: 5px; 
+  margin-top: 1em;
+  margin-left: 20px;
+  height: 350px;
+  width: 348.5px;
+}
+div.box1{
+  border: rgba(0, 0, 0, 0.418) dashed 3px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  display: inline-block;
+  height: 50px;
+  width: 100%;
+}
+div.box2{
+  border: rgba(0, 0, 0, 0.418) dashed 3px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  display: inline-block;
+  height: 40px;
+  width: 100%;
+}
+div.box3{
+  border: rgba(0, 0, 0, 0.418) dashed 3px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  display: inline-block;
+  height: 40px;
+  width: 100%;
+}
+div.iconbox2{
+  background-color:rgba(175, 189, 248, 0.5);
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 3px;
+  margin-right: 5px;
+  height: 40px;
+  width: auto;
+}
+div.iconbox1{
+  background-color:rgba(248, 192, 175, 0.5);
+  border-radius: 3px;
+  display: inline-block;
+  margin-top: 3px;
+  margin-right: 5px;
+  height: 40px;
+  width: auto;
+}
+div.box4{
+  background-color:rgba(194, 194, 194, 0.623);
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-left:15px;
+  margin-right:15px;
+  height: 40px;
+  width: 90%;
+}
+div.vacinebox{
+  background-color:rgb(255, 245, 235);
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-right:10px;
+  float:right;
+  height: 80%;
+  width: 50%;
+}
+div.vacinebox1{
+  background-color:rgb(222, 237, 240);
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 7px;
+  height: 15%;
+  width: 95%;
+}
+div.box5{
+  height: 30px;
+  width: 90%;
+  display: inline-block;
+}
+h2{
+  border: none;
+  float: left;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+h4{
+  border: none;
+  float: left;
+  margin-left: 20px;
+}
+h5{
+  border: none;
+  float: left;
+  margin-left: 20px;
+}
+h3{
+  border: none;
+  float: left;
+  margin-top: 8px;
+  padding-left: 13px;
+  padding-right: 13px;
+}
+div{
+  display: block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; 
+}
+.main{
+  cursor: pointer;
+}
+.main1{
+  cursor: pointer;
+}
