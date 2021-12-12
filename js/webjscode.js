@@ -158,6 +158,11 @@ function Coviddata() { // 전체 함수
                 }]
             },
             options:{
+                responsive: true,
+                title: {
+                    display: true,
+                    text: '한국 백신 접종률'
+                },
                 legend: {
                     position: 'bottom'
                 }
