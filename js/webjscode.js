@@ -2,7 +2,7 @@
 var button = document.querySelector("button");
 var countryname = document.querySelector("input")
 //button.addEventListener('click', Coviddata)
-var getParam = function(key){
+var getParam = function(key){       // search에서 get 방식으로 보내지는 나라 이름 데이터 받기
     var _parammap = {};
     document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
         function decode(s) {
@@ -16,7 +16,7 @@ var getParam = function(key){
 };
 
 
-function Coviddata() {
+function Coviddata() { // 전체 함수 
     console.log('start')
     var country = getParam("country")
     if(country == undefined){
@@ -28,7 +28,7 @@ function Coviddata() {
     request.responseType = 'json';
     request.send();
 
-    request.onload = function() {
+    request.onload = function() {                       //coviddata  json 받아와서 함수 실행 
         var coviddata = request.response;
         var data = coviddata[country]['data'];
         console.log(data.length);    
@@ -39,18 +39,18 @@ function Coviddata() {
         let a = document.getElementsByClassName("main0")[0];
         a.innerText=coviddata[country]['location']; 
 
-        var countryname = Object.keys(coviddata);
+        var countryname = Object.keys(coviddata);               // 나라 이름 받아오기
         console.log(countryname)
         var per = [];
 
 
-        var death = [];
+        var death = [];                                         //사망자 데이터
         death.push(data[data.length-1]["total_deaths"])
         console.log(death)
         let x = document.getElementsByClassName("main1")[0];
         x.innerText=death[0]; 
 
-        var newcase = [];
+        var newcase = [];                                       //신규 확진자 데이터
         newcase.push(data[data.length-1]["new_cases"]);
         let y = document.getElementsByClassName("main2")[0];
         y.innerText=newcase[0]; 
@@ -59,14 +59,14 @@ function Coviddata() {
         console.log(daydata);
         var daydataforchart = [];
         for (let i=0; i <7; i++)
-            daydataforchart.push(daydata[i]["date"]);
+            daydataforchart.push(daydata[i]["date"]);   //차트를 위한 날짜 인덱스 값
         daydataforchart = daydataforchart.reverse();
         for (let i=0; i <7; i++)
-            onedaynewcase.push(daydata[i]["new_cases"]);
+            onedaynewcase.push(daydata[i]["new_cases"]);    // 일일 확진자 데이터
         onedaynewcase = onedaynewcase.reverse();
         var deathchart = [];
         for (let i=0; i <7; i++)
-            deathchart.push(daydata[i]["total_deaths"]);
+            deathchart.push(daydata[i]["total_deaths"]);    // 종합 사망자 데이터
         deathchart = deathchart.reverse();
 
         //----------------백신 접종률 높은순으로 5개 구하는 부분 ------------------//
@@ -121,20 +121,20 @@ function Coviddata() {
         countryWithVaccine = countryWithVaccine.slice(0,5)
         console.log(countryWithVaccine) // 결과물!
 //--------------------------끝!--------------------------//
-        let c = document.getElementsByClassName("vacinebox")[0];
+        let c = document.getElementsByClassName("vacinebox")[0];     //html에  출력으로 보내기
         for (let i=0; i<5; i++){
         c.children[i].children[0].innerText=String(countryWithVaccine[i]['country'])
         c.children[i].children[1].innerText=String(countryWithVaccine[i]['vaccine']) + '%'
         }
 
 
-        var vac_2 = coviddata['KOR']['data'][coviddata['KOR']['data'].length-1]['people_fully_vaccinated_per_hundred']
-        var vac_1 = coviddata['KOR']['data'][coviddata['KOR']['data'].length-1]['people_vaccinated_per_hundred'] 
+        var vac_2 = coviddata['KOR']['data'][coviddata['KOR']['data'].length-2]['people_fully_vaccinated_per_hundred'] // 한국의 백신 접종률 데이터 
+        var vac_1 = coviddata['KOR']['data'][coviddata['KOR']['data'].length-2]['people_vaccinated_per_hundred'] 
         var vac_0 = 100-vac_1 
         console.log(vac_0,vac_1,vac_2)
 
 
-        var context = document
+        var context = document  // 차트 부분
             .getElementById('myChart')
             .getContext('2d');
         context.clearRect(0,0,900,500)
@@ -164,7 +164,7 @@ function Coviddata() {
             }
         });
 
-        var myChart = new Chart(context, {
+        var myChart = new Chart(context, {      //꺽은선 그래프
             type: 'line',
             data: {
                 labels: daydataforchart,
